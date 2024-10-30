@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">project</string>
+    <string-array name="crust_types">
+        <item>Fine</item>
+        <item>Normal</item>
+        <item>Epais</item>
+        <item>Farcie</item>
+    </string-array>
+</resources>

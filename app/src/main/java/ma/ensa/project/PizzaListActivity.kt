@@ -52,6 +52,14 @@ class PizzaListActivity : AppCompatActivity() {
     private fun createPizzaList(): List<Pizza> {
         return listOf(
             Pizza(
+                id = 0,
+                name = "Pizza Vide",
+                description = "sauce tomate",
+                imageResource = R.drawable.pizza_base,
+                toppings = mutableListOf(),
+                basePrice = 10.0
+            ),
+            Pizza(
                 id = 1,
                 name = "Pizza Margherita",
                 description = "mozzarella et sauce tomate",
@@ -103,13 +111,21 @@ class PizzaListActivity : AppCompatActivity() {
     }
 
     private fun navigateToMainActivity(pizza: Pizza) {
-        val intent = Intent(this, MainActivity::class.java).apply {
+        val intent = if (pizza.id == 0) {
+            Intent(this, MainActivity1::class.java)
+        } else {
+            Intent(this, MainActivity::class.java)
+        }
+
+        intent.apply {
             putExtra("PIZZA_ID", pizza.id)
             putExtra("PIZZA_NAME", pizza.name)
             putExtra("PIZZA_BASE_PRICE", pizza.basePrice)
             putExtra("PIZZA_IMAGE", pizza.imageResource)
             putStringArrayListExtra("PIZZA_TOPPINGS", ArrayList(pizza.toppings))
         }
+
         startActivity(intent)
     }
+
 }

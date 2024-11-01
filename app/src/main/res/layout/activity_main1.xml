@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F5">
@@ -11,14 +12,35 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <!-- Header Section -->
-        <ImageView
-            android:id="@+id/pizzaImage"
+        <!-- Pizza Visualization Section -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:scaleType="centerCrop"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:elevation="4dp" />
+            android:elevation="4dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="320dp">
+
+                <!-- Background pizza image -->
+
+                <ImageView
+                    android:id="@+id/pizzaImage"
+                    android:layout_width="355dp"
+                    android:layout_height="260dp"
+                    android:alpha="0.0"
+                    android:scaleType="centerCrop" />
+
+                <ma.ensa.project.AnimatedPizzaView
+                    android:id="@+id/animatedPizzaView"
+                    android:layout_width="338dp"
+                    android:layout_height="247dp"
+                    android:layout_gravity="center"
+                    tools:ignore="MissingClass" />
+
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/pizzaNameText"
@@ -28,8 +50,8 @@
             android:textStyle="bold"
             android:textColor="@color/orange"
             android:layout_marginBottom="24dp"
-            android:text="Nom de la pizza"
-            android:gravity="center" />
+            android:gravity="center"
+            tools:text="Nom de la pizza" />
 
         <!-- Size Selection Section -->
         <LinearLayout
@@ -55,7 +77,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="3">
+                android:background="#F8F8F8"
+                android:padding="8dp">
 
                 <RadioButton
                     android:id="@+id/smallSize"
@@ -110,7 +133,7 @@
                 android:id="@+id/crustSpinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
+                android:padding="12dp"
                 android:background="#F8F8F8" />
         </LinearLayout>
 
@@ -133,45 +156,53 @@
                 android:textSize="18sp"
                 android:layout_marginBottom="12dp"/>
 
-            <CheckBox
-                android:id="@+id/pepperoniCheck"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Pepperoni"
-                android:textColor="@android:color/black"
-                android:padding="8dp"/>
+                android:orientation="vertical"
+                android:background="#F8F8F8"
+                android:padding="8dp">
 
-            <CheckBox
-                android:id="@+id/mushroomsCheck"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Champignons"
-                android:textColor="@android:color/black"
-                android:padding="8dp"/>
+                <CheckBox
+                    android:id="@+id/pepperoniCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pepperoni"
+                    android:textColor="@android:color/black"
+                    android:padding="8dp"/>
 
-            <CheckBox
-                android:id="@+id/onionsCheck"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Oignons"
-                android:textColor="@android:color/black"
-                android:padding="8dp"/>
+                <CheckBox
+                    android:id="@+id/mushroomsCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Champignons"
+                    android:textColor="@android:color/black"
+                    android:padding="8dp"/>
 
-            <CheckBox
-                android:id="@+id/sausageCheck"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Saucisse"
-                android:textColor="@android:color/black"
-                android:padding="8dp"/>
+                <CheckBox
+                    android:id="@+id/onionsCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Oignons"
+                    android:textColor="@android:color/black"
+                    android:padding="8dp"/>
 
-            <CheckBox
-                android:id="@+id/extraCheeseCheck"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Extra fromage"
-                android:textColor="@android:color/black"
-                android:padding="8dp"/>
+                <CheckBox
+                    android:id="@+id/sausageCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Saucisse"
+                    android:textColor="@android:color/black"
+                    android:padding="8dp"/>
+
+                <CheckBox
+                    android:id="@+id/extraCheeseCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Extra fromage"
+                    android:textColor="@android:color/black"
+                    android:padding="8dp"/>
+            </LinearLayout>
         </LinearLayout>
 
         <!-- Order Section -->

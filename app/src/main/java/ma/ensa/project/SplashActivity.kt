@@ -31,7 +31,7 @@ class SplashActivity : AppCompatActivity() {
         // Lancer l'activité principale après un délai
         CoroutineScope(Dispatchers.Main).launch {
             delay(3000) // 3 secondes
-            startActivity(Intent(this@SplashActivity, PizzaListActivity::class.java))
+            startActivity(Intent(this@SplashActivity, LandingActivity::class.java))
             finish()
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }

@@ -8,5 +8,10 @@
     <color name="orange">#FF9800</color>
     <color name="orangePrimary">#FFA500</color>
     <color name="grayBackground">#F2F2F2</color>
+    <color name="backgroundColor">#FFF7E6</color> <!-- Light cream background -->
+    <color name="headerTextColor">#FFA726</color> <!-- Vibrant orange for headings -->
+    <color name="accentColor">#FF7043</color> <!-- Orange-red for selected items -->
+    <color name="buttonColor">#FFCC80</color> <!-- Light pastel orange for buttons -->
+
 
 </resources>

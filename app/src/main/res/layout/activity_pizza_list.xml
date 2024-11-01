@@ -15,7 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/primary_text"
+            android:background="#EB8F34"
             android:elevation="4dp"
             app:title="Nos Pizzas"
             app:titleTextColor="@color/white"

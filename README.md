@@ -26,3 +26,4 @@ The Pizza Management App is a mobile application designed to simplify the orderi
 
 ## Licence
 Younes Amerga
+📄 Licence Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus de détails.
